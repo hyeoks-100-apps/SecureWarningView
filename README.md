@@ -31,13 +31,15 @@ npm run export
 
 명령이 완료되면 `out/` 디렉터리에 GitHub Pages에 업로드할 수 있는 정적 파일이 생성됩니다.
 
-## GitHub Pages 배포 예시
+## GitHub Pages 배포 예시 (GitHub Actions)
 
-1. 리포지터리를 GitHub에 푸시합니다.
-2. GitHub Pages 설정에서 **Build and deployment** → **Source**를 `Deploy from a branch`로 설정합니다.
-3. `gh-pages` 등 배포용 브랜치를 하나 만들고, `out/` 디렉터리의 정적 파일을 해당 브랜치의 루트에 커밋합니다.
-   - 예: `npm run build && npm run export` 이후 `git subtree push --prefix out origin gh-pages`
-4. 저장하면 수 분 내에 GitHub Pages 주소에서 경고 페이지를 확인할 수 있습니다.
+GitHub Pages의 **Build and deployment** 소스를 `GitHub Actions`로 설정하면, 기본 브랜치(main)에 푸시할 때마다 자동으로 정적 사이트를 빌드하고 배포할 수 있습니다.
+
+1. 리포지터리를 GitHub에 푸시한 뒤, GitHub Pages 설정에서 **Build and deployment** → **Source**를 `GitHub Actions`로 지정합니다.
+2. 이 저장소에 포함된 워크플로(`.github/workflows/deploy.yml`)가 `main` 브랜치에 푸시될 때마다 실행됩니다.
+3. 워크플로는 `npm install`, `npm run build`, `npm run export`를 수행해 `out/` 디렉터리에 정적 파일을 생성하고, GitHub Pages에 자동 배포합니다.
+4. 워크플로 실행이 완료되면 배포 로그의 `Deploy to GitHub Pages` 단계에서 제공하는 URL을 통해 결과를 확인할 수 있습니다.
+
 
 > GitHub Pages의 서브디렉터리에 배포하는 경우(예: `https://username.github.io/repo-name`)에는 `next.config.mjs`의 `basePath`와 `assetPrefix`를 저장소 이름에 맞게 지정하세요.
 
