@@ -46,6 +46,7 @@ GitHub Pages의 **Build and deployment** 소스를 `GitHub Actions`로 설정하
 
 > 포크 등 다른 저장소로 배포한다면 저장소 이름이 경로로 사용됩니다. GitHub Actions 환경에서는 자동으로 감지되지만, 로컬에서 직접 정적 Export를 배포하려면 `GITHUB_REPOSITORY` 환경 변수를 `username/repo` 형식으로 지정하고 `npm run build && npm run export`를 실행하면 동일한 결과를 얻을 수 있습니다.
 
+
 ## 라이선스
 
 이 프로젝트는 학습 및 데모 목적으로 자유롭게 사용할 수 있습니다.
