@@ -40,6 +40,7 @@ GitHub Pages의 **Build and deployment** 소스를 `GitHub Actions`로 설정하
 3. 워크플로는 `npm install`, `npm run build`, `npm run export`를 수행해 `out/` 디렉터리에 정적 파일을 생성하고, GitHub Pages에 자동 배포합니다.
 4. 워크플로 실행이 완료되면 배포 로그의 `Deploy to GitHub Pages` 단계에서 제공하는 URL을 통해 결과를 확인할 수 있습니다.
 
+
 > GitHub Pages의 서브디렉터리에 배포하는 경우(예: `https://username.github.io/repo-name`)에는 `next.config.mjs`의 `basePath`와 `assetPrefix`를 저장소 이름에 맞게 지정하세요.
 
 ## 라이선스
