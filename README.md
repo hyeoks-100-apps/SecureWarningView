@@ -15,6 +15,9 @@ GitHub Pages에 배포할 수 있는 Next.js 기반의 정적 경고 페이지 �
 npm install
 ```
 
+처음 의존성을 설치하면 `package-lock.json`이 생성됩니다. GitHub Actions 워크플로는 이 잠금 파일을 기반으로 `npm ci`를 실행하므로, 의존성
+을 추가하거나 변경할 때는 `package-lock.json`도 함께 커밋해 주세요.
+
 ### 개발 서버 실행
 
 ```bash
@@ -38,7 +41,7 @@ GitHub Pages의 **Build and deployment** 소스를 `GitHub Actions`로 설정하
 
 1. 리포지터리를 GitHub에 푸시한 뒤, GitHub Pages 설정에서 **Build and deployment** → **Source**를 `GitHub Actions`로 지정합니다.
 2. 이 저장소에 포함된 워크플로(`.github/workflows/deploy.yml`)가 `main` 브랜치에 푸시될 때마다 실행됩니다.
-3. 워크플로는 `npm install`, `npm run build`, `npm run export`를 수행해 `out/` 디렉터리에 정적 파일을 생성하고, GitHub Pages에 자동 배포합니다. GitHub Pages 배포 URL은 일반적으로 `https://<username>.github.io/<repo>/` 형태입니다.
+3. 워크플로는 `npm ci`, `npm run build`, `npm run export`를 수행해 `out/` 디렉터리에 정적 파일을 생성하고, GitHub Pages에 자동 배포합니다. GitHub Pages 배포 URL은 일반적으로 `https://<username>.github.io/<repo>/` 형태입니다.
 4. 워크플로 실행이 완료되면 배포 로그의 `Deploy to GitHub Pages` 단계에서 제공하는 URL을 통해 결과를 확인할 수 있습니다.
 
 > 포크 등 다른 저장소로 배포한다면 저장소 이름이 경로로 사용됩니다. GitHub Actions 환경에서는 자동으로 감지되지만, 로컬에서 직접 정적 Export를 배포하려면 `GITHUB_REPOSITORY` 환경 변수를 `username/repo` 형식으로 지정하고 `npm run build && npm run export`를 실행하면 동일한 결과를 얻을 수 있습니다.
