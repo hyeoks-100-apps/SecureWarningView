@@ -30,7 +30,7 @@ npm run dev
 
 ```bash
 npm run build
-```
+
 
 명령이 완료되면 Next.js가 자동으로 `out/` 디렉터리에 GitHub Pages에 업로드할 수 있는 정적 파일을 생성합니다.
 
@@ -44,6 +44,7 @@ GitHub Pages의 **Build and deployment** 소스를 `GitHub Actions`로 설정하
 4. 워크플로 실행이 완료되면 배포 로그의 `Deploy to GitHub Pages` 단계에서 제공하는 URL을 통해 결과를 확인할 수 있습니다.
 
 > 포크 등 다른 저장소로 배포한다면 저장소 이름이 경로로 사용됩니다. GitHub Actions 환경에서는 자동으로 감지되지만, 로컬에서 직접 정적 Export를 배포하려면 `GITHUB_REPOSITORY` 환경 변수를 `username/repo` 형식으로 지정하고 `npm run build`를 실행하면 동일한 결과를 얻을 수 있습니다.
+
 
 ## 라이선스
 
