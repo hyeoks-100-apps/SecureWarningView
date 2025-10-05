@@ -4,6 +4,7 @@
 
 사용자에게 "이 사이트는 악성 피싱 사이트입니다"라는 경고를 강렬한 비주얼과 함께 전달하는 Next.js 기반의 정적 웹페이지입니다. GitHub Pages에 손쉽게 배포할 수 있도록 설계되어, `example.com`처럼 피싱 위험이 있는 도메인을 사칭한다는 설정을 직관적으로 시연할 수 있습니다.
 
+
 ## 주요 특징
 
 - **정적 Export 지원**: `next.config.mjs`에서 `output: "export"`를 사용해 GitHub Pages에 올릴 수 있는 순수 정적 파일을 생성합니다.
@@ -32,7 +33,6 @@ npm run dev
 
 ```bash
 npm run build
-```
 
 명령이 완료되면 Next.js가 자동으로 `out/` 디렉터리에 GitHub Pages에 업로드할 수 있는 정적 파일을 생성합니다.
 
