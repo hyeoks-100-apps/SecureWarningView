@@ -1,6 +1,9 @@
 # SecureWarningView
 
-GitHub Pages에 배포할 수 있는 Next.js 기반의 정적 경고 페이지 예제입니다. `example.com`과 같이 피싱 위험이 있는 도메인을 사칭하는 사이트라는 설정으로, 사용자에게 즉각적인 경고 메시지를 강조하는 UI를 제공합니다.
+> ⚠️ **지금 바로 경고 페이지 데모를 보려면 👉 [SecureWarningView 라이브 사이트](https://hyeoks-100-apps.github.io/SecureWarningView/)**
+
+사용자에게 "이 사이트는 악성 피싱 사이트입니다"라는 경고를 강렬한 비주얼과 함께 전달하는 Next.js 기반의 정적 웹페이지입니다. GitHub Pages에 손쉽게 배포할 수 있도록 설계되어, `example.com`처럼 피싱 위험이 있는 도메인을 사칭한다는 설정을 직관적으로 시연할 수 있습니다.
+
 
 ## 주요 특징
 
@@ -31,7 +34,6 @@ npm run dev
 ```bash
 npm run build
 
-
 명령이 완료되면 Next.js가 자동으로 `out/` 디렉터리에 GitHub Pages에 업로드할 수 있는 정적 파일을 생성합니다.
 
 ## GitHub Pages 배포 예시 (GitHub Actions)
@@ -44,7 +46,6 @@ GitHub Pages의 **Build and deployment** 소스를 `GitHub Actions`로 설정하
 4. 워크플로 실행이 완료되면 배포 로그의 `Deploy to GitHub Pages` 단계에서 제공하는 URL을 통해 결과를 확인할 수 있습니다.
 
 > 포크 등 다른 저장소로 배포한다면 저장소 이름이 경로로 사용됩니다. GitHub Actions 환경에서는 자동으로 감지되지만, 로컬에서 직접 정적 Export를 배포하려면 `GITHUB_REPOSITORY` 환경 변수를 `username/repo` 형식으로 지정하고 `npm run build`를 실행하면 동일한 결과를 얻을 수 있습니다.
-
 
 ## 라이선스
 
