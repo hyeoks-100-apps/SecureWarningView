@@ -30,10 +30,9 @@ npm run dev
 
 ```bash
 npm run build
-npm run export
-```
 
-명령이 완료되면 `out/` 디렉터리에 GitHub Pages에 업로드할 수 있는 정적 파일이 생성됩니다.
+
+명령이 완료되면 Next.js가 자동으로 `out/` 디렉터리에 GitHub Pages에 업로드할 수 있는 정적 파일을 생성합니다.
 
 ## GitHub Pages 배포 예시 (GitHub Actions)
 
@@ -41,10 +40,10 @@ GitHub Pages의 **Build and deployment** 소스를 `GitHub Actions`로 설정하
 
 1. 리포지터리를 GitHub에 푸시한 뒤, GitHub Pages 설정에서 **Build and deployment** → **Source**를 `GitHub Actions`로 지정합니다.
 2. 이 저장소에 포함된 워크플로(`.github/workflows/deploy.yml`)가 `main` 브랜치에 푸시될 때마다 실행됩니다.
-3. 워크플로는 `npm ci`, `npm run build`, `npm run export`를 수행해 `out/` 디렉터리에 정적 파일을 생성하고, GitHub Pages에 자동 배포합니다. GitHub Pages 배포 URL은 일반적으로 `https://<username>.github.io/<repo>/` 형태입니다.
+3. 워크플로는 `npm ci`와 `npm run build`를 수행해 `out/` 디렉터리에 정적 파일을 생성하고, GitHub Pages에 자동 배포합니다. GitHub Pages 배포 URL은 일반적으로 `https://<username>.github.io/<repo>/` 형태입니다.
 4. 워크플로 실행이 완료되면 배포 로그의 `Deploy to GitHub Pages` 단계에서 제공하는 URL을 통해 결과를 확인할 수 있습니다.
 
-> 포크 등 다른 저장소로 배포한다면 저장소 이름이 경로로 사용됩니다. GitHub Actions 환경에서는 자동으로 감지되지만, 로컬에서 직접 정적 Export를 배포하려면 `GITHUB_REPOSITORY` 환경 변수를 `username/repo` 형식으로 지정하고 `npm run build && npm run export`를 실행하면 동일한 결과를 얻을 수 있습니다.
+> 포크 등 다른 저장소로 배포한다면 저장소 이름이 경로로 사용됩니다. GitHub Actions 환경에서는 자동으로 감지되지만, 로컬에서 직접 정적 Export를 배포하려면 `GITHUB_REPOSITORY` 환경 변수를 `username/repo` 형식으로 지정하고 `npm run build`를 실행하면 동일한 결과를 얻을 수 있습니다.
 
 
 ## 라이선스

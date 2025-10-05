@@ -11,7 +11,6 @@ const config = {
   trailingSlash: true,
   basePath: basePath || undefined,
   assetPrefix: basePath ? `${basePath}/` : undefined,
-
 };
 
 export default config;
